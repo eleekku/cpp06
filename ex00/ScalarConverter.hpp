@@ -5,31 +5,20 @@
 
 class ScalarConverter
 {
-private:
-	std::string _input;
-public:
-	ScalarConverter();
-	ScalarConverter(std::string input);
-	ScalarConverter(const ScalarConverter &obj);
-	~ScalarConverter();
-	ScalarConverter &operator=(const ScalarConverter &obj);
-
-	void convert();
-	void convertChar();
-	void convertSpecial();
-	void convertNumber();
-
-	class ImpossibleException : public std::exception
-	{
-		virtual const char *what() const throw();
-	};
-
-	class NonDisplayableException : public std::exception
-	{
-		virtual const char *what() const throw();
-	};
-
+	private:
+		ScalarConverter();
+		ScalarConverter(const ScalarConverter &obj);
+		~ScalarConverter();
+		ScalarConverter &operator=(const ScalarConverter &obj);
+	public:
+		static void convert(const std::string &input);
 };
+
+	void convertChar(const std::string &input);
+	void convertSpecial(const std::string &input);
+	void convertNumber(const std::string &input);
+	void convertFloat(const std::string &input);
+
 
 
 #endif

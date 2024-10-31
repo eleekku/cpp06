@@ -1,6 +1,6 @@
-NAME		=	Polymorphism
+NAME		=	Conversion
 
-SRC			=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRC			=	main.cpp ScalarConverter.cpp 
 
 OBJS		=	$(SRC:.cpp=.o)
 
@@ -8,9 +8,9 @@ COMPILE		=	c++
 
 FLAGS		=	-Wall -Wextra -Werror -std=c++17 
 
-EXE_NAME	=	-o Polymorphism
+EXE_NAME	=	-o Conversion
 
-EXEC		=	Polymorphism
+EXEC		=	Conversion
 
 # ------------------------------------- RULES ---------------------------------
 all: $(NAME)
