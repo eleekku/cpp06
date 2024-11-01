@@ -1,4 +1,5 @@
 #include "ScalarConverter.hpp"
+#include <limits>
 
 ScalarConverter::ScalarConverter() {}
 
@@ -77,7 +78,7 @@ void convertFloat(const std::string &input)
     else
         std::cout << "Non displayable" << std::endl;
     std::cout << "int: ";
-    if (f > std::numeric_limits<int>::max() || f < std::numeric_limits<int>::min())
+    if (f > static_cast<float>(std::numeric_limits<int>::max()) || f < static_cast<float>(std::numeric_limits<int>::min()))
         std::cout << "impossible" << std::endl;
     else
         std::cout << static_cast<int>(f) << std::endl;
