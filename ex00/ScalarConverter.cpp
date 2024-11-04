@@ -1,5 +1,6 @@
 #include "ScalarConverter.hpp"
 #include <limits>
+#include <iomanip>
 
 ScalarConverter::ScalarConverter() {}
 
@@ -53,9 +54,10 @@ void convertChar(const std::string &input)
         std::cout << "'" << c << "'" << std::endl;
     else
         std::cout << "Non displayable" << std::endl;
-    std::cout << "int: " << static_cast<int>(c) << std::endl;
-    std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
-    std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
+    std::cout << "int: "<< static_cast<int>(c) << std::endl;
+    std::cout << std::fixed << std::setprecision(1);
+    std::cout << "float: " << static_cast<float>(c) << "f" << std::endl;
+    std::cout << "double: " << static_cast<double>(c) << std::endl;
 }
 
 void convertSpecial(const std::string &input)
@@ -83,6 +85,7 @@ void convertFloat(const std::string &input)
     else
         std::cout << static_cast<int>(f) << std::endl;
     std::cout << "float: " << f << "f" << std::endl;
+   std::cout << std::fixed << std::setprecision(1); 
     std::cout << "double: " << static_cast<double>(f) << std::endl;
 }
 
@@ -102,6 +105,7 @@ void convertNumber(const std::string &input)
         std::cout << "impossible" << std::endl;
     else
         std::cout << static_cast<int>(d) << std::endl;
+       std::cout << std::fixed << std::setprecision(1);
     std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
     std::cout << "double: " << d << std::endl;
 }
